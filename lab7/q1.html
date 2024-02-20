@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SI CI</title>
+</head>
+<body>
+    <form name="form1">
+        <label for="principal">Principal</label>
+        <input type="number" name="principal" id="principal"><br>
+        <label for="time">Time</label>
+        <input type="number" name="time" id="time"><br>
+        <label for="rate">Rate</label>
+        <input type="number" name="rate" id="rate"><br>
+        <input type="button" onclick="calc()" value="Calculate">
+    </form>
+    <h3>Simple Interest</h3><p id="si"></p>
+    <h3>Compound Interest</h3><p id="ci"></p>
+    <script>
+        function calc() {
+            var p = document.form1.principal.value;
+            var t = document.form1.time.value;
+            var r = document.form1.rate.value;
+            var si = (p * t * r) / 100;
+            var ci = p * (Math.pow((1 + r / 100), t)) - p;
+            document.getElementById("si").innerText=si;
+            document.getElementById("ci").innerText=ci;
+        }
+    </script>
+</body>
+</html>

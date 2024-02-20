@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prime</title>
+</head>
+<body>
+    <form name="form1">
+        <label for="num">Enter a Number:</label>
+        <input type="number" name="num" id="num"><br>
+        <input type="button" onclick="check()" value="Check">
+    </form>
+    <p id="display"></p>
+    <script>
+        function check(){
+            var n = document.form1.num.value;
+            var f = 0;
+            for(let i=2;i<=n/2;i++) {
+                if(n%i==0) {
+                    f=1;
+                    break;
+                }
+            }
+            if(f==0){
+                document.getElementById("display").innerText="Is Prime";
+            }else{
+                document.getElementById("display").innerText="Is Not Prime";
+            }
+        }
+    </script>
+</body>
+</html>

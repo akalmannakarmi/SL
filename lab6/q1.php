@@ -1,0 +1,1 @@
+<!-- 1. WAP to display the delete the student record stored in the database of Lab 4 with confirmation from user. -->

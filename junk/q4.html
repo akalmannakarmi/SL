@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <form name="form1">
+            <tr>
+                <td>
+                    First Name
+                </td>
+                <td>
+                    <input type="text" name="fname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name
+                </td>
+                <td>
+                    <input type="text" name="lname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Phone No:
+                </td>
+                <td>
+                    <input type="number" name="phoneNo">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" name="email">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Comments
+                </td>
+                <td>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </td>
+            </tr>
+        </form>
+        <tr>
+            <td></td>
+            <td>
+                <button onclick="validate()">Submit</button>
+            </td>
+        </tr>
+    </table>
+    
+    <script>
+        function emptyCheck() {
+            console.log("empty check");
+            if(document.form1.fname.value==""){
+                alert("First name can not be empty");
+                document.form1.fname.focus();
+                return false;
+            }
+            if(document.form1.lname.value==""){
+                alert("Last name can not be empty");
+                document.form1.lname.focus();
+                return false;
+            }
+            if(!(document.form1.gender[0].checked || document.form1.gender[1].checked)){
+                alert("Please Select Gender");
+                return false;
+            }
+            if(document.form1.phoneNo.value==""){
+                alert("Phone No must be a number");
+                document.form1.phoneNo.focus();
+                return false;
+            }
+            if(document.form1.email.value==""){
+                alert("Email can not be empty");
+                document.form1.email.focus();
+                return false;
+            }
+            console.log("not empty");
+            return true;
+        }
+        function validate() {
+            console.log("valid check");
+            if(!emptyCheck()){
+                return false;
+            }
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var email=document.form1.email.value;
+            if(!emailPattern.test(email)){
+                alert("Invalid Email");
+                document.form1.email.focus();
+                return false;
+            }
+            console.log("valid");
+        }
+    </script>
+</body>
+</html>

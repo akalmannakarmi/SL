@@ -1,0 +1,1 @@
+<!-- 2. WAP in PHP to upload file in php & store it into the database. -->

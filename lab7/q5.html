@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Day</title>
+</head>
+<body>
+    <form name="form1">
+        <label for="num">Enter a Day in number:</label>
+        <input type="number" name="num" id="num"><br>
+        <input type="button" onclick="day()" value="Day">
+    </form>
+    <p id="display"></p>
+    <script>
+        function day(){
+            var n = document.form1.num.value;
+            n = n%7;
+            switch (n) {
+                case 0:
+                    document.getElementById("display").innerText="Saturday";
+                    break;
+                case 1:
+                    document.getElementById("display").innerText="Sunday";
+                    break;
+                case 2:
+                    document.getElementById("display").innerText="Monday";
+                    break;
+                case 3:
+                    document.getElementById("display").innerText="Tuesday";
+                    break;
+                case 4:
+                    document.getElementById("display").innerText="Wednesday";
+                    break;
+                case 5:
+                    document.getElementById("display").innerText="Thursday";
+                    break;
+                case 6:
+                    document.getElementById("display").innerText="Friday";
+                    break;
+            
+                default:
+                    document.getElementById("display").innerText="Invalid";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

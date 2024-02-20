@@ -1,0 +1,22 @@
+<!-- WAP to sum of two no using Form and text box -->
+<!DOCTYPE html>
+<html lang="en">52
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function sum(){
+            document.getElementById("display").innerText=parseInt(document.form1.num1.value)+parseInt(document.form1.num2.value);
+        }
+    </script>
+</head>
+<body>
+    <form name="form1">
+        <input type="text" name="num1">
+        <input type="text" name="num2">
+    </form>
+    <button onclick="sum()">Sum</button>
+    <h3 id="display"></h3>
+</body>
+</html>

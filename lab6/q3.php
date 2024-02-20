@@ -1,0 +1,1 @@
+<!-- 3. WAP in PHP to retrieve the file stored in the database of Qno 2. -->
