@@ -1,6 +1,41 @@
-<html>
-    <head><title>my first js page</title></head>
-</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Icon</title>
+  <style>
+    .edit-icon {
+        width: 30px;
+        height: 30px;
+        background-color: #007bff; /* Blue color, you can change this */
+        border-radius: 50%; /* Makes it round */
+        position: relative;
+        }
+
+        .edit-icon:before, .edit-icon:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2px;
+        height: 12px;
+        background-color: #fff; /* White color, you can change this */
+        }
+
+        .edit-icon:before {
+        transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .edit-icon:after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+  </style>
+</head>
 <body>
-    <script src="1.js"></script>
+    
+  <div class="edit-icon"></div>
 </body>
+</html>

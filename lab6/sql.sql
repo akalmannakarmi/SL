@@ -1,0 +1,7 @@
+CREATE TABLE files (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    size INT NOT NULL,
+    data LONGBLOB NOT NULL
+);

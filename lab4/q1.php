@@ -12,8 +12,8 @@
     <label for="contact">Contact:</label>
     <input type="text" name="contact" id="contact"><br>
     <label for="gender">Gender:</label>
-    <input type="radio" name="gender" value="Male">
-    <input type="radio" name="gender" value="Female"><br>
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female<br>
     <label for="district">District:</label>
     <select name="district" id="district">
         <option value="kathmandu">Kathmandu</option>
@@ -30,13 +30,13 @@
         $contact = $_POST['contact'];
         $gender = $_POST['gender'];
         $district = $_POST['district'];
-        $conn = new mysqli('localhost','root','','mydb');
+        $conn = new mysqli('localhost','root','','sl');
         if($conn->connect_error){
             echo "$conn->connect_error";
             die("Connection Failed : ". $conn->connect_error);
         } else {
-            $stmt = $conn->prepare("insert into registration(name, address, contact, gender, district) values(?, ?, ?, ?, ?)");
-            $stmt->bind_param("sss", $name, $address, $contact, $gender, $district);
+            $stmt = $conn->prepare("INSERT INTO registration(name, address, contact, gender, district) VALUES(?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssss", $name, $address, $contact, $gender, $district);
             $execval = $stmt->execute();
             echo $execval;
             echo "Registration successfully...";
