@@ -1,20 +1,10 @@
 <!-- 1. WAP to display the data stored in database in Lab 4. -->
-
-<!DOCTYPE html>
-<head>
-    <title>Database Insert</title>
-</head>
+<html>
+<head><title>Database View</title></head>
 <body>
     <h2>Registered Users</h2>
     <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Contact</th>
-            <th>Gender</th>
-            <th>District</th>
-        </tr>
+        <tr><th>ID</th><th>Name</th><th>Address</th><th>Contact</th><th>Gender</th><th>District</th></tr>
         <?php
             $conn = new mysqli('localhost','root','','sl');
             if($conn->connect_error){

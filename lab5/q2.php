@@ -1,30 +1,19 @@
 <!-- 2. Edit & Update the student record based on the unique id. -->
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Edit & Update Student Record</title>
-</head>
+<head><title>Edit & Update</title></head>
 <body>
 <h2>Edit & Update Student Record</h2>
-<?php
-    if(!isset($_GET['id'])){
-?>
+<?php if(!isset($_GET['id'])){ ?>
 <form method="get">
     <label for="id">Enter ID of the Record to Edit:</label>
     <input type="text" name="id" id="id">
     <button type="submit">Edit Record</button>
 </form>
-<?php
-    }
-?>
-<?php
-    // Database connection
+<?php }
     $conn = new mysqli('localhost', 'root', '', 'sl');
     if ($conn->connect_error) {
         die("Connection Failed: " . $conn->connect_error);
     }
-
-    // Update record when form submitted
     if (isset($_POST['update'])) {
         $id = $_POST['id'];
         $name = $_POST['name'];
@@ -40,13 +29,10 @@
             echo "Error updating record: " . $conn->error;
         }
     }
-
-    // Check if ID parameter is set and fetch the student record
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
         $sql = "SELECT * FROM registration WHERE id = $id";
         $result = $conn->query($sql);
-
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
 ?>
